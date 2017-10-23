@@ -49,7 +49,10 @@ public class RestService {
 	public void initData() {
 		if (notificationRepository.count() == 0) {
 			
-			notificationRepository.save(new Notification("salary payment", "shfklejfklesjfsekljfklsjflskjfseljfekl", "today", "HR", "http://www.hotnews.ro/images/new/logo.gif"));
+			String veryLongText = "shfklejfklesjfsekljfklsjflskjfseljfeklshfklejfklesjfsekljfklsjflskjfseljfeklshfklejfklesjfsekljfklsjflskjfseljfekl";
+			
+			
+			notificationRepository.save(new Notification("salary payment", veryLongText, "today", "HR", "http://www.hotnews.ro/images/new/logo.gif"));
 			notificationRepository.save(new Notification("test1", "shfklejfklesjfsekljfklsjflskjfseljfekl", "today", "HR", "http://www.pngmart.com/files/1/Banana-Icon-PNG.png"));
 			notificationRepository.save(new Notification("test2", "sdfdrmgndrjkndrjk", "today", "Facyesterdayility", "http://www.hotnews.ro/images/new/logo.gif"));
 			notificationRepository.save(new Notification("test3", "aaaaaaaaaaaaaaaaa", "yesterday", "HR", "http://www.pngmart.com/files/1/Banana-Icon-PNG.png"));
@@ -64,6 +67,9 @@ public class RestService {
 			notificationRepository.save(new Notification("test12", "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", "today", "...", "http://www.hotnews.ro/images/new/logo.gif"));
 			notificationRepository.save(new Notification("test13", "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww", "yesterday", "X", "http://www.hotnews.ro/images/new/logo.gif"));
 			notificationRepository.save(new Notification("test14", "jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj", "today", "HR", "http://www.hotnews.ro/images/new/logo.gif"));
+			
+			
+			
 			
 			
 			/*Stream.of("Gigi Masinuta", "Ana CuMere", "Robin Hood", "Ogre Forest").map(name -> name.split(" "))

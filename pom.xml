@@ -51,6 +51,9 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+		
+		<!-- FCM client -->
+
 	</dependencies>
 
 	<build>

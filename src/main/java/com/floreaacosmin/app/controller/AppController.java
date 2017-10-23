@@ -46,7 +46,18 @@ public class AppController {
 	}
 
 	@RequestMapping(value = "/addnotification", method = RequestMethod.POST)
-	public ResponseEntity<Notification> addCustomer(@RequestBody Notification newNotification) {
+	public ResponseEntity<Notification> addNotification(@RequestBody Notification newNotification) {
+		restService.saveNotification(newNotification);
+		return new ResponseEntity<Notification>(newNotification, HttpStatus.OK);
+	}
+	
+	@RequestMapping(value = "/sendnotification", method = RequestMethod.POST)
+	public ResponseEntity<Notification> sendNotification(@RequestBody Notification newNotification) {
+		
+		// Pushraven.setKey("AAAAp-h0nj4:APA91bG5RIeKkU8ggERJ9LHIKqx1s9ZNgqd8mb0hM1sT3Zl7bdBeNS077W9BXvooLE1XIvnAps7Np4oCU49nNZy5tIIVm9sJ2ebxlupiq87R4JOE-VJS4M-txl0xyo-Jp0abZw0iPMRJ");
+		
+
+		
 		restService.saveNotification(newNotification);
 		return new ResponseEntity<Notification>(newNotification, HttpStatus.OK);
 	}
