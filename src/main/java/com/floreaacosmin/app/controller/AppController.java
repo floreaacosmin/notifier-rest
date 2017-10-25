@@ -2,8 +2,6 @@ package com.floreaacosmin.app.controller;
 
 import java.util.List;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -13,19 +11,17 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.floreaacosmin.app.repository.Notification;
 import com.floreaacosmin.app.service.RestService;
 import com.floreaacosmin.app.utils.StaticUtils;
 
-import java.util.Map;
 import us.raudi.pushraven.Pushraven;
 
 @CrossOrigin
 @RestController
 public class AppController {
 
-	private static final Logger logger = LoggerFactory.getLogger(AppController.class);
+	// private static final Logger logger = LoggerFactory.getLogger(AppController.class);
 	
 	private RestService restService;
 
@@ -62,12 +58,13 @@ public class AppController {
 	@RequestMapping(value = "/sendnotification", method = RequestMethod.POST)
 	public ResponseEntity<Notification> sendNotification(@RequestBody Notification newNotification) {
 		
-		Map<String, Object> newNotificationMap = new ObjectMapper().convertValue(newNotification, Map.class);
-		logger.info(newNotificationMap.toString());
-
+		String trimmedNotificationContent = newNotification.getContent().substring(0, 
+				Math.min(newNotification.getContent().length(), StaticUtils.NOTIFICATION_LENGTH));
+		
 		us.raudi.pushraven.Notification fcmNotification = new us.raudi.pushraven.Notification();
-		fcmNotification.data(newNotificationMap).to("/topics/all_topics");
+		fcmNotification.body(trimmedNotificationContent).title(newNotification.getAuthor()).to("/topics/all_topics");
 		Pushraven.setKey(StaticUtils.FCM_KEY);
+		
 		Pushraven.push(fcmNotification);
 		
 		restService.saveNotification(newNotification);

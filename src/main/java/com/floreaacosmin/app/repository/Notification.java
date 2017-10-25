@@ -3,6 +3,7 @@ package com.floreaacosmin.app.repository;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 
 @Entity
 public class Notification {
@@ -10,8 +11,8 @@ public class Notification {
 	@Id
 	@GeneratedValue
     private Long id;
-    
     private String name;
+    @Lob
     private String content;
     private String date;
     private String author;
