@@ -39,6 +39,11 @@ public class AppController {
 		return new ResponseEntity<String>(StaticUtils.NOTHING, HttpStatus.OK);
 	}
 
+	@RequestMapping(value = "/authors/all/distinct", method = RequestMethod.GET)
+	public List<String> findAllDistinctAuthors() {
+		return restService.findAllDistinctAuthors();
+	}
+	
 	@RequestMapping(value = "/notifications/all", method = RequestMethod.GET)
 	public List<Notification> findAllNotifications() {
 		return restService.findAllNotifications();

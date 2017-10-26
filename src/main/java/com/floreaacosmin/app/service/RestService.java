@@ -23,6 +23,10 @@ public class RestService {
 		this.notificationRepository = notificationRepository;
 	}
 
+	public List<String> findAllDistinctAuthors() {
+		return notificationRepository.findAllDistinctAuthors();
+	}
+	
 	public List<Notification> findAllNotifications() {
 		return notificationRepository.findAll();
 	}
