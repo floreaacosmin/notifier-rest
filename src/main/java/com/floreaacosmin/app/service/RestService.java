@@ -74,8 +74,8 @@ public class RestService {
 			notificationRepository.save(new Notification("x2", "aaaaaa", "today", "X2", "http://www.hotnews.ro/images/new/logo.gif"));
 			notificationRepository.save(new Notification("x3", "aaaaaa", "today", "X3", "http://www.hotnews.ro/images/new/logo.gif"));
 			notificationRepository.save(new Notification("x4", "aaaaaa", "today", "X4", "http://www.hotnews.ro/images/new/logo.gif"));
-			
-			
+			notificationRepository.save(new Notification("x5", "aaaaaa", "today", "X5", "http://www.hotnews.ro/images/new/logo.gif"));
+			notificationRepository.save(new Notification("x6", "aaaaaa", "today", "X6", "http://www.hotnews.ro/images/new/logo.gif"));
 			
 			
 			
