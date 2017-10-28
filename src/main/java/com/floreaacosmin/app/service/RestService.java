@@ -53,8 +53,7 @@ public class RestService {
 	public void initData() {
 		if (notificationRepository.count() == 0) {
 			
-			String veryLongText = "shfklejfklesjfsekljfklsjflskjfseljfeklshfklejfklesjfsekljfklsjflskjfseljfeklshfklejfklesjfsekljfklsjflskjfseljfekl";
-			
+			String veryLongText = "shfklejfklesjfsek<br />ljfklsjflskj<br />fseljfekls<br />hfklejfklesjfse<br />kljfklsjflskjfse<br />ljfeklshfklejfklesjfsekljfklsjflskjfseljfekl";
 			
 			notificationRepository.save(new Notification("salary payment", veryLongText, "today", "HR", "http://www.hotnews.ro/images/new/logo.gif"));
 			notificationRepository.save(new Notification("test1", "shfklejfklesjfsekljfklsjflskjfseljfekl", "today", "HR", "http://www.pngmart.com/files/1/Banana-Icon-PNG.png"));
@@ -71,6 +70,10 @@ public class RestService {
 			notificationRepository.save(new Notification("test12", "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", "today", "...", "http://www.hotnews.ro/images/new/logo.gif"));
 			notificationRepository.save(new Notification("test13", "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww", "yesterday", "X", "http://www.hotnews.ro/images/new/logo.gif"));
 			notificationRepository.save(new Notification("test14", "jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj", "today", "HR", "http://www.hotnews.ro/images/new/logo.gif"));
+			notificationRepository.save(new Notification("x1", "aaaaaa", "today", "X1", "http://www.hotnews.ro/images/new/logo.gif"));
+			notificationRepository.save(new Notification("x2", "aaaaaa", "today", "X2", "http://www.hotnews.ro/images/new/logo.gif"));
+			notificationRepository.save(new Notification("x3", "aaaaaa", "today", "X3", "http://www.hotnews.ro/images/new/logo.gif"));
+			notificationRepository.save(new Notification("x4", "aaaaaa", "today", "X4", "http://www.hotnews.ro/images/new/logo.gif"));
 			
 			
 			
