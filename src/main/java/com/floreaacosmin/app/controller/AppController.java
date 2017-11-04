@@ -36,7 +36,7 @@ public class AppController {
 
 	@RequestMapping("/")
 	public ResponseEntity<String> defaultResponse() {
-		return new ResponseEntity<String>(StaticUtils.NOTHING, HttpStatus.OK);
+		return new ResponseEntity<String>(restService.getUptime(), HttpStatus.OK);
 	}
 
 	@RequestMapping(value = "/authors/all/distinct", method = RequestMethod.GET)

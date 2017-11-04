@@ -1,5 +1,7 @@
 package com.floreaacosmin.app.service;
 
+import java.lang.management.ManagementFactory;
+import java.lang.management.RuntimeMXBean;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
@@ -23,6 +25,14 @@ public class RestService {
 		this.notificationRepository = notificationRepository;
 	}
 
+	public String getUptime() {
+		RuntimeMXBean runtimeMXBean = ManagementFactory.getRuntimeMXBean();
+		long uptimeValue = runtimeMXBean.getUptime();
+		String uptime = "Uptime: "; 
+		
+		return uptime + uptimeValue; 
+	}
+	
 	public List<String> findAllDistinctAuthors() {
 		return notificationRepository.findAllDistinctAuthors();
 	}
