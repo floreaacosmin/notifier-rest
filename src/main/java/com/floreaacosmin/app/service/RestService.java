@@ -3,6 +3,7 @@ package com.floreaacosmin.app.service;
 import java.lang.management.ManagementFactory;
 import java.lang.management.RuntimeMXBean;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 import javax.annotation.PostConstruct;
 
@@ -30,7 +31,11 @@ public class RestService {
 		long uptimeValue = runtimeMXBean.getUptime();
 		String uptime = "Uptime: "; 
 		
-		return uptime + uptimeValue; 
+		String hms = String.format("%02d:%02d:%02d", TimeUnit.MILLISECONDS.toHours(uptimeValue),
+			    TimeUnit.MILLISECONDS.toMinutes(uptimeValue) % TimeUnit.HOURS.toMinutes(1),
+			    TimeUnit.MILLISECONDS.toSeconds(uptimeValue) % TimeUnit.MINUTES.toSeconds(1));
+		
+		return uptime + hms; 
 	}
 	
 	public List<String> findAllDistinctAuthors() {
