@@ -45,6 +45,11 @@ public class RestService {
 	public List<Notification> findAllNotifications() {
 		return notificationRepository.findAll();
 	}
+
+	public List<Notification> findByNameContains(String term) {
+		return notificationRepository.findByNameContains(term);
+	}
+
 	
 	public Notification findNotification(Long id) {
 		return notificationRepository.findOne(id);

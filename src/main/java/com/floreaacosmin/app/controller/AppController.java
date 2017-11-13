@@ -51,6 +51,11 @@ public class AppController {
 		return restService.findAllNotifications();
 	}
 
+	@RequestMapping(value = "/notifications/search/{term}", method = RequestMethod.GET)
+	public List<Notification> findByNameContains(@PathVariable String term) {
+		return restService.findByNameContains(term);
+	}
+	
 	@RequestMapping(value = "/notifications/{id}", method = RequestMethod.GET)
 	public Notification findNotification(@PathVariable Long id) {
 		return restService.findNotification(id);

@@ -11,5 +11,8 @@ public interface NotificationRepository extends JpaRepository<Notification, Long
 	
 	@Query("SELECT DISTINCT n.author FROM Notification n")
 	List<String> findAllDistinctAuthors();
+	
+	// Auto-generated Spring repository interface implementation
+	List<Notification> findByNameContains(String term);
 }
 
