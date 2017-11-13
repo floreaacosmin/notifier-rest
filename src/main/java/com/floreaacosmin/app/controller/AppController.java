@@ -2,6 +2,8 @@ package com.floreaacosmin.app.controller;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -21,7 +23,7 @@ import us.raudi.pushraven.Pushraven;
 @RestController
 public class AppController {
 
-	// private static final Logger logger = LoggerFactory.getLogger(AppController.class);
+	private static final Logger logger = LoggerFactory.getLogger(AppController.class);
 	
 	private RestService restService;
 
@@ -69,10 +71,14 @@ public class AppController {
 		us.raudi.pushraven.Notification fcmNotification = new us.raudi.pushraven.Notification();
 		fcmNotification.body(trimmedNotificationContent).title(newNotification.getAuthor()).to("/topics/all_topics");
 		Pushraven.setKey(StaticUtils.FCM_KEY);
-		
-		Pushraven.push(fcmNotification);
+		/* Clearing the notification, if this is not done, the notification transmission 
+		 * will not work; it's the same with "raven = new Notification();" */
+		Pushraven.notification.clear();
+		int fcmResponseCose = Pushraven.push(fcmNotification).getResponseCode();
+		logger.info("FCM notification sent, the response code was: " + fcmResponseCose);
 		
 		restService.saveNotification(newNotification);
+		
 		return new ResponseEntity<Notification>(newNotification, HttpStatus.OK);
 	}
 
