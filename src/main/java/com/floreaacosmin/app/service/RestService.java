@@ -2,35 +2,29 @@ package com.floreaacosmin.app.service;
 
 import java.lang.management.ManagementFactory;
 import java.lang.management.RuntimeMXBean;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import javax.annotation.PostConstruct;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.floreaacosmin.app.repository.Notification;
 import com.floreaacosmin.app.repository.NotificationRepository;
-import com.floreaacosmin.app.utils.ProcessInputFile;
 
 @Service
 @Transactional
 public class RestService {
 
-	private static final Logger logger = LoggerFactory.getLogger(RestService.class);
+	// private static final Logger logger = LoggerFactory.getLogger(RestService.class);
 	
 	private NotificationRepository notificationRepository;
-	private ProcessInputFile processInputFile;
 	
 	@Autowired
-	public RestService(NotificationRepository notificationRepository, ProcessInputFile processInputFile) {
+	public RestService(NotificationRepository notificationRepository) {
 		this.notificationRepository = notificationRepository;
-		this.processInputFile = processInputFile;
 	}
 
 	public String getUptime() {
