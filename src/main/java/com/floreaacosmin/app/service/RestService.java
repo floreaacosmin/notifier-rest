@@ -90,7 +90,7 @@ public class RestService {
 			notificationRepository.save(new Notification("Building alarm test", "you are asked to evacuate the building", "today", "facility", "http://solostep.com/wp-content/uploads/2015/02/icon-facility-lg.png"));
 			notificationRepository.save(new Notification("nobody", ".................", "in the future", "secret", "http://www.pngmart.com/files/1/Banana-Icon-PNG.png"));
 			
-			notificationRepository.save(new Notification("test8", "testing testing x8", "today", "TEST", "http://www.iconarchive.com/download/i88896/icons8/ios7/Science-Test-Tube.ico"));
+			notificationRepository.save(new Notification("test8", "testing testing x8 testing testing x8 testing testing x8 testing testing x8 testing testing x8 testing testing x8", "today", "TEST", "http://www.iconarchive.com/download/i88896/icons8/ios7/Science-Test-Tube.ico"));
 			notificationRepository.save(new Notification("test9", "testing testing x9", "yesterday", "TEST", "http://www.iconarchive.com/download/i88896/icons8/ios7/Science-Test-Tube.ico"));
 			notificationRepository.save(new Notification("test10", "testing testing x10", "yesterday", "TEST", "http://www.iconarchive.com/download/i88896/icons8/ios7/Science-Test-Tube.ico"));
 			notificationRepository.save(new Notification("test11", "testing testing x11", "today", "TEST", "http://www.iconarchive.com/download/i88896/icons8/ios7/Science-Test-Tube.ico"));
