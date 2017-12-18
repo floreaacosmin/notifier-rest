@@ -81,31 +81,30 @@ public class RestService {
 			
 			//notificationRepository.save(notifList);
 			
-			
-			// String veryLongText = "shfklejfklesjfsek<br />ljfklsjflskj<br />fseljfekls<br />hfklejfklesjfse<br />kljfklsjflskjfse<br />ljfeklshfklejfklesjfsekljfklsjflskjfseljfekl";
-			
-			notificationRepository.save(new Notification("salary payment", "december salary! ... will enter in january ;)", "today", "HR", "http://www.hotnews.ro/images/new/logo.gif"));
-			notificationRepository.save(new Notification("new positions", "we are hiring 100 new austronauts!", "yesterday", "HR", "http://www.pngmart.com/files/1/Banana-Icon-PNG.png"));
-			notificationRepository.save(new Notification("LetterBex", "Luigi has a new movie! :p", "today", "Luigi", "http://www.hotnews.ro/images/new/logo.gif"));
-			notificationRepository.save(new Notification("christmas party", "It was a great party, you will find the pictures on your phone! :D", "yesterday", "comms", "http://www.pngmart.com/files/1/Banana-Icon-PNG.png"));
-			notificationRepository.save(new Notification("compliance stuff", "some stuff here", "today", "compliance", "http://www.hotnews.ro/images/new/logo.gif"));
-			notificationRepository.save(new Notification("M-essage", "message from Mike", "yesterday", "M", "http://www.pngmart.com/files/1/Banana-Icon-PNG.png"));
-			notificationRepository.save(new Notification("Building alarm test", "you are asked to evacuate the building", "today", "facility", "http://www.hotnews.ro/images/new/logo.gif"));
+			notificationRepository.save(new Notification("salary payment", "december salary! ... will enter in january ;)", "today", "HR", "http://www.pvhc.net/img64/eaibpkgpggjvqxriuved.png"));
+			notificationRepository.save(new Notification("new positions", "we are hiring 100 new austronauts!", "yesterday", "HR", "http://www.pvhc.net/img64/eaibpkgpggjvqxriuved.png"));
+			notificationRepository.save(new Notification("Movies", "Luigi has a new movie! :p", "today", "LetterBex", "https://marketplace.canva.com/MAB4reUgRxg/1/thumbnail/canva-video-camera-icon.-movie-design.-vector-graphic--MAB4reUgRxg.png"));
+			notificationRepository.save(new Notification("christmas party", "It was a great party, you will find the pictures on your phone! :D", "yesterday", "comms", "http://www.racialequityresourceguide.org/images/dmImage/ThumbnailImage/icon-lg-media.png"));
+			notificationRepository.save(new Notification("compliance stuff", "some stuff here", "today", "compliance", "http://www.appliedsensortech.com/images_2016/form_image.png"));
+			notificationRepository.save(new Notification("M-essage", "message from Mike", "yesterday", "M", "https://icon-icons.com/icons2/278/PNG/512/Mou_30215.png"));
+			notificationRepository.save(new Notification("Building alarm test", "you are asked to evacuate the building", "today", "facility", "http://solostep.com/wp-content/uploads/2015/02/icon-facility-lg.png"));
 			notificationRepository.save(new Notification("nobody", ".................", "in the future", "secret", "http://www.pngmart.com/files/1/Banana-Icon-PNG.png"));
-			notificationRepository.save(new Notification("test8", "hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh", "today", "CXO", "http://www.hotnews.ro/images/new/logo.gif"));
-			notificationRepository.save(new Notification("test9", "jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj", "yesterday", "?", "http://www.hotnews.ro/images/new/logo.gif"));
-			notificationRepository.save(new Notification("test10", "uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu", "yesterday", "M", "http://www.hotnews.ro/images/new/logo.gif"));
-			notificationRepository.save(new Notification("test11", "rrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrrr", "today", "Facility", "http://www.hotnews.ro/images/new/logo.gif"));
-			notificationRepository.save(new Notification("test12", "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx", "today", "...", "http://www.hotnews.ro/images/new/logo.gif"));
-			notificationRepository.save(new Notification("test13", "wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww", "yesterday", "X", "http://www.hotnews.ro/images/new/logo.gif"));
-			notificationRepository.save(new Notification("test14", "jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj", "today", "HR", "http://www.hotnews.ro/images/new/logo.gif"));
-			notificationRepository.save(new Notification("x1", "aaaaaa", "today", "X1", "http://www.hotnews.ro/images/new/logo.gif"));
-			notificationRepository.save(new Notification("x2", "aaaaaa", "today", "X2", "http://www.hotnews.ro/images/new/logo.gif"));
-			notificationRepository.save(new Notification("x3", "aaaaaa", "today", "X3", "http://www.hotnews.ro/images/new/logo.gif"));
-			notificationRepository.save(new Notification("x4", "aaaaaa", "today", "X4", "http://www.hotnews.ro/images/new/logo.gif"));
-			notificationRepository.save(new Notification("x5", "aaaaaa", "today", "X5", "http://www.hotnews.ro/images/new/logo.gif"));
-			notificationRepository.save(new Notification("x6", "aaaaaa", "today", "X6", "http://www.hotnews.ro/images/new/logo.gif"));
-			notificationRepository.save(new Notification("x7", "zzzzzz", "today", "X7", "http://www.hotnews.ro/images/new/logo.gif"));
+			
+			notificationRepository.save(new Notification("test8", "testing testing x8", "today", "TEST", "http://www.iconarchive.com/download/i88896/icons8/ios7/Science-Test-Tube.ico"));
+			notificationRepository.save(new Notification("test9", "testing testing x9", "yesterday", "TEST", "http://www.iconarchive.com/download/i88896/icons8/ios7/Science-Test-Tube.ico"));
+			notificationRepository.save(new Notification("test10", "testing testing x10", "yesterday", "TEST", "http://www.iconarchive.com/download/i88896/icons8/ios7/Science-Test-Tube.ico"));
+			notificationRepository.save(new Notification("test11", "testing testing x11", "today", "TEST", "http://www.iconarchive.com/download/i88896/icons8/ios7/Science-Test-Tube.ico"));
+			notificationRepository.save(new Notification("test12", "testing testing x12", "today", "TEST", "http://www.iconarchive.com/download/i88896/icons8/ios7/Science-Test-Tube.ico"));
+			notificationRepository.save(new Notification("test13", "testing testing x13", "yesterday", "TEST", "http://www.iconarchive.com/download/i88896/icons8/ios7/Science-Test-Tube.ico"));
+			notificationRepository.save(new Notification("test14", "testing testing x14", "today", "TEST", "http://www.iconarchive.com/download/i88896/icons8/ios7/Science-Test-Tube.ico"));
+			
+			notificationRepository.save(new Notification("x1", "aaaaaabbbbbbcccccc", "today", "mr.X", "http://www.iconarchive.com/download/i91613/icons8/windows-8/Science-Test-Tube.ico"));
+			notificationRepository.save(new Notification("x2", "aaaaaabbbbbbcccccc", "today", "mr.X", "http://www.iconarchive.com/download/i91613/icons8/windows-8/Science-Test-Tube.ico"));
+			notificationRepository.save(new Notification("x3", "aaaaaabbbbbbcccccc", "today", "mr.X", "http://www.iconarchive.com/download/i91613/icons8/windows-8/Science-Test-Tube.ico"));
+			notificationRepository.save(new Notification("x4", "aaaaaabbbbbbcccccc", "today", "mr.X", "http://www.iconarchive.com/download/i91613/icons8/windows-8/Science-Test-Tube.ico"));
+			notificationRepository.save(new Notification("x5", "aaaaaabbbbbbcccccc", "today", "mr.X", "http://www.iconarchive.com/download/i91613/icons8/windows-8/Science-Test-Tube.ico"));
+			notificationRepository.save(new Notification("x6", "aaaaaabbbbbbcccccc", "today", "mr.X", "http://www.iconarchive.com/download/i91613/icons8/windows-8/Science-Test-Tube.ico"));
+			notificationRepository.save(new Notification("x7", "aaaaaabbbbbbcccccc", "today", "mr.X", "http://www.iconarchive.com/download/i91613/icons8/windows-8/Science-Test-Tube.ico"));
 			
 			
 			
