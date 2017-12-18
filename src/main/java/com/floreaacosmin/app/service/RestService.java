@@ -2,28 +2,35 @@ package com.floreaacosmin.app.service;
 
 import java.lang.management.ManagementFactory;
 import java.lang.management.RuntimeMXBean;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 import javax.annotation.PostConstruct;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.floreaacosmin.app.repository.Notification;
 import com.floreaacosmin.app.repository.NotificationRepository;
-
+import com.floreaacosmin.app.utils.ProcessInputFile;
 
 @Service
 @Transactional
 public class RestService {
 
+	private static final Logger logger = LoggerFactory.getLogger(RestService.class);
+	
 	private NotificationRepository notificationRepository;
+	private ProcessInputFile processInputFile;
 	
 	@Autowired
-	public RestService(NotificationRepository notificationRepository) {
+	public RestService(NotificationRepository notificationRepository, ProcessInputFile processInputFile) {
 		this.notificationRepository = notificationRepository;
+		this.processInputFile = processInputFile;
 	}
 
 	public String getUptime() {
@@ -73,16 +80,24 @@ public class RestService {
 	public void initData() {
 		if (notificationRepository.count() == 0) {
 			
-			String veryLongText = "shfklejfklesjfsek<br />ljfklsjflskj<br />fseljfekls<br />hfklejfklesjfse<br />kljfklsjflskjfse<br />ljfeklshfklejfklesjfsekljfklsjflskjfseljfekl";
+			// ArrayList<Notification> notifList = (ArrayList<Notification>) processInputFile.processInputFile("static/notifications.csv");
 			
-			notificationRepository.save(new Notification("salary payment", veryLongText, "today", "HR", "http://www.hotnews.ro/images/new/logo.gif"));
-			notificationRepository.save(new Notification("test1", "shfklejfklesjfsekljfklsjflskjfseljfekl", "today", "HR", "http://www.pngmart.com/files/1/Banana-Icon-PNG.png"));
-			notificationRepository.save(new Notification("test2", "sdfdrmgndrjkndrjk", "today", "Facyesterdayility", "http://www.hotnews.ro/images/new/logo.gif"));
-			notificationRepository.save(new Notification("test3", "aaaaaaaaaaaaaaaaa", "yesterday", "HR", "http://www.pngmart.com/files/1/Banana-Icon-PNG.png"));
-			notificationRepository.save(new Notification("test4", "ddddddddddddddddddddddddddddddd", "today", "CXO", "http://www.hotnews.ro/images/new/logo.gif"));
-			notificationRepository.save(new Notification("test5", "eeeeeeeeeeeeeeeeeeeeeeeeeeeee", "yesterday", "Compliance", "http://www.pngmart.com/files/1/Banana-Icon-PNG.png"));
-			notificationRepository.save(new Notification("test6", "fffffffffffffffffffffffffffff", "today", "HR", "http://www.hotnews.ro/images/new/logo.gif"));
-			notificationRepository.save(new Notification("test7", "ggggggggggggggggggggggggggggg", "yesterday", "HR", "http://www.pngmart.com/files/1/Banana-Icon-PNG.png"));
+			// logger.debug("parsing...");
+			// logger.debug(notifList.toString());
+			
+			//notificationRepository.save(notifList);
+			
+			
+			// String veryLongText = "shfklejfklesjfsek<br />ljfklsjflskj<br />fseljfekls<br />hfklejfklesjfse<br />kljfklsjflskjfse<br />ljfeklshfklejfklesjfsekljfklsjflskjfseljfekl";
+			
+			notificationRepository.save(new Notification("salary payment", "december salary! ... will enter in january ;)", "today", "HR", "http://www.hotnews.ro/images/new/logo.gif"));
+			notificationRepository.save(new Notification("new positions", "we are hiring 100 new austronauts!", "yesterday", "HR", "http://www.pngmart.com/files/1/Banana-Icon-PNG.png"));
+			notificationRepository.save(new Notification("LetterBex", "Luigi has a new movie! :p", "today", "Luigi", "http://www.hotnews.ro/images/new/logo.gif"));
+			notificationRepository.save(new Notification("christmas party", "It was a great party, you will find the pictures on your phone! :D", "yesterday", "comms", "http://www.pngmart.com/files/1/Banana-Icon-PNG.png"));
+			notificationRepository.save(new Notification("compliance stuff", "some stuff here", "today", "compliance", "http://www.hotnews.ro/images/new/logo.gif"));
+			notificationRepository.save(new Notification("M-essage", "message from Mike", "yesterday", "M", "http://www.pngmart.com/files/1/Banana-Icon-PNG.png"));
+			notificationRepository.save(new Notification("Building alarm test", "you are asked to evacuate the building", "today", "facility", "http://www.hotnews.ro/images/new/logo.gif"));
+			notificationRepository.save(new Notification("nobody", ".................", "in the future", "secret", "http://www.pngmart.com/files/1/Banana-Icon-PNG.png"));
 			notificationRepository.save(new Notification("test8", "hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh", "today", "CXO", "http://www.hotnews.ro/images/new/logo.gif"));
 			notificationRepository.save(new Notification("test9", "jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj", "yesterday", "?", "http://www.hotnews.ro/images/new/logo.gif"));
 			notificationRepository.save(new Notification("test10", "uuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuuu", "yesterday", "M", "http://www.hotnews.ro/images/new/logo.gif"));
@@ -97,6 +112,7 @@ public class RestService {
 			notificationRepository.save(new Notification("x5", "aaaaaa", "today", "X5", "http://www.hotnews.ro/images/new/logo.gif"));
 			notificationRepository.save(new Notification("x6", "aaaaaa", "today", "X6", "http://www.hotnews.ro/images/new/logo.gif"));
 			notificationRepository.save(new Notification("x7", "zzzzzz", "today", "X7", "http://www.hotnews.ro/images/new/logo.gif"));
+			
 			
 			
 			/*Stream.of("Gigi Masinuta", "Ana CuMere", "Robin Hood", "Ogre Forest").map(name -> name.split(" "))
